@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: manhua
-          image: v3tool/webssh-test
+          image: v3tool/webssh-gotty
           imagePullPolicy: Always
           ports:
             - name: http-ports
