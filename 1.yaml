@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: manhua
+  labels:
+    app: myapp
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: manhua
+  template:
+    metadata:
+      labels:
+        app: manhua
+    spec:
+      containers:
+        - name: manhua
+          image: v3tool/webssh-test
+          imagePullPolicy: Always
+          ports:
+            - name: http-ports
+              containerPort: 8080
+          env:
+            - name: GottyUser
+              value: "v3tool"
+            - name: GottyPassword
+              value: "V3tool"
