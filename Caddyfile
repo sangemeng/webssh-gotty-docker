@@ -17,4 +17,9 @@
 			header_up X-Forwarded-Proto {http.request.scheme}
 		}
 	}
+	route /admin* {
+	    uri strip_prefix /admin
+	    root *  /wwwroot/KODExplorer
+	    php_fastcgi unix//tmp/php-cgi-73.sock
+	}
 }
