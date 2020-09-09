@@ -31,10 +31,3 @@ spec:
               value: "v3tool"
             - name: GottyPassword
               value: "V3tool"
-          resources:
-              requests:
-                memory: "64Mi"
-                cpu: "10m"
-              limits:
-                memory: "512Mi"
-                cpu: "1000m"
